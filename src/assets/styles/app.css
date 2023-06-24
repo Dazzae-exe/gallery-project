@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    @apply font-sans leading-normal font-normal bg-schema-light-base dark:bg-schema-dark-base text-schema-dark-base dark:text-schema-light-base scroll-smooth;
+  }
+
+  #root {
+    @apply max-w-screen-xl m-0 p-0 text-center mx-auto;
+  }
+
+  h1 {
+    @apply text-6xl font-extrabold leading-normal;
+  }
+
+  h2 {
+    @apply text-4xl font-bold leading-normal;
+  }
+
+  h3 {
+    @apply text-2xl font-bold leading-snug;
+  }
+
+  p {
+    @apply text-xl font-normal leading-tight;
+  }
+
+  span {
+    @apply text-sm font-light leading-tight;
+  }
+
+  button {
+    @apply p-2.5 w-fit h-fit;
+  }
+}

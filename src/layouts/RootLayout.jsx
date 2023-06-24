@@ -1,18 +1,15 @@
-import SearchContext from "../context/SearchContext";
-import { useInitialValue } from "../hooks/useInitialValue";
-import Footer from "../pages/Main/Footer";
-import Header from "../pages/Main/Header";
+import { Outlet } from "react-router-dom";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
+import "../assets/styles/app.css"
 
-const RootLayout = ({ children }) => {
-  const { state } = useInitialValue(); 
-
+const RootLayout = () => {
   return (
     <div className="w-full h-full space-y-8 py-4">
       <Header />
-      <SearchContext.Provider value={state.searchTarget}>
-        <main className="w-full h-full flex flex-col gap-y-12">{children}</main>
-      </SearchContext.Provider>
-
+      <main className="w-full h-full flex flex-col gap-y-12">
+        <Outlet />
+      </main>
       <Footer />
     </div>
   );
