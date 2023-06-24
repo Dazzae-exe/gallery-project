@@ -1,7 +1,7 @@
-import React from "react";
+
 import GalleryCard from "./GalleryCard";
 
-function GalleryContainer(props) {
+function GalleryContainer({galleryImagesArr, containerClassName, containerStyling, cardClassName, sizes}) {
   const returnSize = (height) => {
     if (height <= 3500) {
       return "small";
@@ -20,14 +20,14 @@ function GalleryContainer(props) {
 
   return (
     <div
-      className={props.containerClassName}
-      style={{ ...props.containerStyling }}
+      className={containerClassName}
+      style={{ ...containerStyling }}
     >
-      {props.galleryImagesArr.map((galleryProps) => (
+      {galleryImagesArr?.map((galleryProps) => (
         <GalleryCard
           size={returnSize(galleryProps.height)}
-          className={props.cardClassName}
-          row={props.sizes}
+          className={cardClassName}
+          row={sizes}
           imageUrl={galleryProps.urls.regular}
           key={galleryProps.id}
         />

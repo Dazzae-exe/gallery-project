@@ -5,6 +5,7 @@ const searchRequest = (url, params, setState) => {
     .get(url, {
       headers: {
         Authorization: import.meta.env.VITE_ACCESS_KEY,
+        "Accept-Version": "v1",
       },
       params,
     })
